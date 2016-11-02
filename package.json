@@ -1,0 +1,24 @@
+{
+  "name": "multiplicationmatrix",
+  "version": "1.0.0",
+  "description": "Multiplication two matrix n x j",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "mocha": "./node_modules/mocha/bin/mocha -R spec test/*.js"
+  },
+  "author": "Alexander Koshelev",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "gulp": "^3.9.1",
+    "gulp-server-livereload": "^1.9.1",
+    "gulp-webserver": "^0.9.1",
+    "mocha": "^3.1.2"
+  },
+  "dependencies": {
+    "angular": "^1.5.8"
+  }
+}

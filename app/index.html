@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html ng-app="MatrixCalculatorApp">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Умножение матриц</title>
+        </script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style type="text/css">
+        div{
+            outline: 1px solid tomato;
+        }
+        td{
+            border: 1px solid red;
+        }
+        input{
+            width: 100%;
+        }
+        
+    </style>
+    </head>
+<body ng-controller="MatrixCalcCtrl">
+    <div class="wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4">
+                    <h1>Control</h1>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <form name="controlForm">
+                                <div class="row">
+                                    <div class="col-md-12"><button ng-click="multiplicationMatrix(matrixA,matrixB)">Умножеть матрицы</button></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <button ng-click="clearAllMatrix()">Очистить матрицы</button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <button ng-click="exchangeMatrix()">Поменять марицы местами</button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label for="a">
+                                            <input name="a" type="radio" ng-model="selectMatrix.value" value="matrixA">
+                                            Матрица А
+                                        </label>
+                                        <label for="b">
+                                            <input name="b" type="radio" ng-model="selectMatrix.value" value="matrixB">
+                                            Матрица В
+                                        </label>
+                                        <br>
+
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <button ng-click="addRowInMatrix()">Добавить</button>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <button ng-click="removeRowInMatrix()">Удалить</button>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <p>строку</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <button ng-click="addColumnInMatrix()">Добавить</button>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <button ng-click="removeColumnInMatrix()">Удалить</button>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <p>столбец</p>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="rov">
+                        <div class="col-md-12">
+                            <p ng-show="showErrorMessage">Такие матрицы нельзя перемножить, так как количество столбцов матрицы А не равно количеству строк матрицы В</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h1>Result</h1>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <table class="result">
+                                    <tr ng-repeat="rowC in matrixC track by $index">
+                                        <td ng-repeat="columnC in rowC track by $index">
+                                            <input type="text" ng-model="matrixC[$parent.$index][$index]"/>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row">
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12"><h1>Matrix A</h1></div>
+                            <div class="col-md-3">
+                                <table>
+                                    <tr ng-repeat="row in matrixA track by $index">
+                                        <td ng-repeat="column in row track by $index">
+                                            <input type="number" placeholder="a1,1" ng-model="matrixA[$parent.$index][$index]">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">{{ matrixA | json}}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12"><h1>Matrix B</h1></div>
+                            <div class="col-md-3">
+                                <table>
+                                    <tr ng-repeat="row in matrixB track by $index">
+                                        <td ng-repeat="column in row track by $index">
+                                            <input type="number" ng-model="matrixB[$parent.$index][$index]">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">{{ matrixB | json}}</div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="../node_modules/angular/angular.js"></script>
+    <script type="text/javascript" src="src/MatrixCalculatorApp.js"></script>
+    <script type="text/javascript" src="src/MatrixCalculator/calculatorService.js"></script>
+    <script type="text/javascript" src="src/MatrixCalculator/controller.js"></script>
+</body>
+</html>

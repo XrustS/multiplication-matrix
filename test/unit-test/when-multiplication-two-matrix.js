@@ -1,5 +1,5 @@
 const assert = require('chai').assert;
-var MultiplicationMatrix = require('../app/src/multiplication-matix.js');
+var MultiplicationMatrix = require('../../app/src/multiplication-matix.js');
 
 describe('Calculator for multiplication two matrix', () => {
   beforeEach(() => {

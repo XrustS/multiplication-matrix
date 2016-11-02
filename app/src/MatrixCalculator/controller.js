@@ -4,17 +4,18 @@ calcApp.controller('MatrixCalcCtrl', function($scope, CalculatorService){
 
     $scope.showErrorMessage = false;
 
-    $scope.matrixC = [['c1,1','c1,2','c1,3'],
-                      ['c2,1','c2,3','c2,4'],
-                      ['c3,1','c3,2','c3,3'],
-                      ['c4,1','c4,2','c4,3']
-                     ];
+    $scope.matrixC = [["","",""],
+                     ["","",""],
+                     ["","",""]];
     $scope.matrixA = [[3, 2],
                       [3, 2]];
 
     $scope.matrixB = [[1, 2],
                       [1, 2]];
     $scope.selectMatrix = { value: 'matrixA' };
+    $scope.changeInput = function() {
+      $scope.showErrorMessage = true;
+    };
 
 
     $scope.clearAllMatrix = function() {

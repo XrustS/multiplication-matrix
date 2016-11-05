@@ -1,0 +1,25 @@
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+@mixin box-shadow-inset($x, $y, $blur, $width, $red, $alpha) {
+  -webkit-box-shadow: inset $x $y $blur $width rgba($red, $red, $red, $alpha);
+  -moz-box-shadow: inset $x $y $blur $width rgba($red, $red, $red, $alpha);
+  box-shadow: inset $x $y $blur $width rgba($red, $red, $red, $alpha);
+  //ie
+  // filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=3,MakeShadow=true,ShadowOpacity=0.30);
+	// -ms-filter: "progid:DXImageTransform.Microsoft.Blur(PixelRadius=3,MakeShadow=true,ShadowOpacity=0.30)";
+	// zoom: 1;
+}
+@mixin box-shadow($x, $y, $blur, $width, $red, $alpha) {
+  -webkit-box-shadow: $x $y $blur $width rgba($red, $red, $red, $alpha);
+  -moz-box-shadow: $x $y $blur $width rgba($red, $red, $red, $alpha);
+  box-shadow: $x $y $blur $width rgba($red, $red, $red, $alpha);
+  //ie
+  // filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=3,MakeShadow=true,ShadowOpacity=0.30);
+	// -ms-filter: "progid:DXImageTransform.Microsoft.Blur(PixelRadius=3,MakeShadow=true,ShadowOpacity=0.30)";
+	// zoom: 1;
+}

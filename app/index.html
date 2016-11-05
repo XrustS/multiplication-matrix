@@ -5,22 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Умножение матриц</title>
         </script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">    
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-    <style type="text/css">
-        div{
-            outline: 1px solid tomato;
-        }
-        td{
-            border: 1px solid red;
-        }
-        input{
-            width: 100%;
-        }
-
-    </style>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"> -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/base.css">
     </head>
 <body ng-controller="MatrixCalcCtrl">
     <div class="wrapper">
@@ -33,26 +22,26 @@
                             <form name="controlForm">
                                 <div class="row">
                                     <div class="col-md-12">
-                                      <button data-ng-disabled="tableA.$invalid || tableB.$invalid" ng-click="multiplicationMatrix(matrixA,matrixB)">Умножеть матрицы</button></div>
+                                      <button class="positive" data-ng-disabled="tableA.$invalid || tableB.$invalid" ng-click="multiplicationMatrix(matrixA,matrixB)">Умножить матрицы</button></div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <button ng-click="clearAllMatrix()">Очистить матрицы</button>
+                                        <button class="btn" ng-click="clearAllMatrix()"><span class="icon-clear"></span>Очистить матрицы</button>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <button ng-click="exchangeMatrix()">Поменять марицы местами</button>
+                                        <button class="btn" ng-click="exchangeMatrix()"><span class="icon-exchange"></span>Поменять марицы местами</button>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <label for="a">
-                                            <input name="a" type="radio" ng-model="selectMatrix.value" value="matrixA">
+                                        <label for="matA">
+                                            <input id="matA" type="radio" ng-model="selectMatrix.value" value="matrixA">
                                             Матрица А
                                         </label>
-                                        <label for="b">
-                                            <input name="b" type="radio" ng-model="selectMatrix.value" value="matrixB">
+                                        <label for="matB">
+                                            <input id="matB" type="radio" ng-model="selectMatrix.value" value="matrixB">
                                             Матрица В
                                         </label>
                                         <br>
@@ -61,10 +50,10 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-5">
-                                        <button ng-click="addRowInMatrix()">Добавить</button>
+                                        <button class="btn" ng-click="addRowInMatrix()"><span class="icon-plus"></span>Добавить</button>
                                     </div>
                                     <div class="col-md-5">
-                                        <button ng-click="removeRowInMatrix()">Удалить</button>
+                                        <button class="btn" ng-click="removeRowInMatrix()"><span class="icon-minus"></span>Удалить</button>
                                     </div>
                                     <div class="col-md-2">
                                         <p>строку</p>
@@ -72,10 +61,10 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-5">
-                                        <button ng-click="addColumnInMatrix()">Добавить</button>
+                                        <button class="btn" ng-click="addColumnInMatrix()"><span class="icon-plus"></span>Добавить</button>
                                     </div>
                                     <div class="col-md-5">
-                                        <button ng-click="removeColumnInMatrix()">Удалить</button>
+                                        <button class="btn" ng-click="removeColumnInMatrix()"><span class="icon-minus"></span>Удалить</button>
                                     </div>
                                     <div class="col-md-2">
                                         <p>столбец</p>

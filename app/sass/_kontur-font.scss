@@ -1,0 +1,36 @@
+@font-face {
+  font-family: $kontur-icon-font-name;
+  src: url($font-kontur-eot)  format('embedded-opentype');/* EOT file for IE */
+  // src: url($font-kontur-ttf)  format('truetype');
+  font-variant: normal;
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: $kontur-icon-font-name;
+  // src: url($font-kontur-eot)  format('embedded-opentype');/* EOT file for IE */
+  src: url($font-kontur-ttf)  format('truetype');
+  font-variant: normal;
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*="icon-"] {
+  font-family: $kontur-icon-font-name !important;
+  speak: none;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-exchange:before {
+  content: "\e01f";
+}
+.icon-clear:before {
+  content:"\e012";
+}
+.icon-plus:before {
+  content:"\e00d";
+}
+.icon-minus:before {
+  content:"\e01e";
+}

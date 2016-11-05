@@ -1,0 +1,34 @@
+// font varables
+$font-kontur-ttf: "../src/fonts/kontur-iconic-eco.ttf";
+$font-kontur-eot: "../src/fonts/kontur-iconic-eco.eot?#iefix";
+$font-name: 'Segoe UI';
+$kontur-icon-font-name: 'KonturIcon';
+$default-font-color: #404040;
+$default-font-size: 14px;
+$default-line-heigth: 20px;
+$font-stack: #{$default-font-size}/#{$default-line-heigth} $font-name, sans-serif;
+// colors varables
+$color-green: #45a117;
+$color-blue: #5199db;
+$color-grey: #d9d9d9;
+// debuging
+// div{
+//     outline: 1px solid tomato;
+// }
+
+@import 'kontur-font';
+@import 'mixins';
+
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  // font: $font-stack;
+  font-family: $font-name;
+  font-size: $default-font-size;
+  line-height: $default-line-heigth;
+  color: $default-font-color;
+}
+@import "buttons";

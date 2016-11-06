@@ -7,14 +7,15 @@ $default-font-color: #404040;
 $default-font-size: 14px;
 $default-line-heigth: 20px;
 $font-stack: #{$default-font-size}/#{$default-line-heigth} $font-name, sans-serif;
-// colors varables
-$color-green: #45a117;
-$color-blue: #5199db;
-$color-grey: #d9d9d9;
+$color-error-panel: #f6c1c0;
+$color-error: tomato;
+$color-input-panel: #5199db;
+$color-default-panel: #bcbcbc;
+
 // debuging
-// div{
-//     outline: 1px solid tomato;
-// }
+*{
+    outline: 1px solid tomato;
+}
 
 @import 'kontur-font';
 @import 'mixins';
@@ -22,13 +23,37 @@ $color-grey: #d9d9d9;
 html {
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100%;
 }
 
+
 body {
+
+  width: 100%;
+  height: 100%;
   // font: $font-stack;
   font-family: $font-name;
   font-size: $default-font-size;
   line-height: $default-line-heigth;
   color: $default-font-color;
 }
+@import "grid";
 @import "buttons";
+@import "matrix-table";
+
+.error{
+  background: $color-error-panel;
+}
+.input{
+  background: $color-input-panel;
+}
+.default-panel {
+  background: $color-default-panel;
+}
+.ng-dirty.ng-invalid {
+  border-color: $color-error;
+}
+.error-text {
+  color: $color-error;
+}

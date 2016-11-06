@@ -1,0 +1,48 @@
+table {
+  td {
+    padding: 5px;
+    input {
+      width: 36px;
+      height: 38px;
+      border: 1px solid #d9d9d9;
+      // text-align: center;
+      padding-left: 5px;
+    }
+  }
+}
+div.wrap-tab {
+  position: relative;
+  margin: 0 30px 25px 0;
+  padding: 2px 4px;
+  border-left: 2px solid #444;
+  border-right: 2px solid #444;
+  position: relative;
+  display: inline-block;
+}
+div.wrap-tab::after,
+div.wrap-tab::before,
+table::after,
+table::before {
+  position: absolute;
+  display: block;
+  width: 8px;
+  height: 2px;
+  background: #444;
+  content: "";
+}
+div.wrap-tab::after {
+  top: 0;
+  right: 0;
+}
+div.wrap-tab::before {
+  top: 0;
+  left: 0;
+}
+table::after {
+  bottom: 0;
+  left: 0;
+}
+table::before {
+  bottom: 0;
+  right: 0;
+}

@@ -1,14 +1,12 @@
 @font-face {
   font-family: $kontur-icon-font-name;
   src: url($font-kontur-eot)  format('embedded-opentype');/* EOT file for IE */
-  // src: url($font-kontur-ttf)  format('truetype');
   font-variant: normal;
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: $kontur-icon-font-name;
-  // src: url($font-kontur-eot)  format('embedded-opentype');/* EOT file for IE */
   src: url($font-kontur-ttf)  format('truetype');
   font-variant: normal;
   font-weight: normal;

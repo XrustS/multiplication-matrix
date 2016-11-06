@@ -1,3 +1,4 @@
+// colors varables
 $color-border-focus: #5199db;
 $color-font-disabled: #808080;
 $color-background-disabled: #f2f2f2;
@@ -11,42 +12,48 @@ $color-positive-hover-up-background: #3b8d13;
 
 button {
   padding: 0px 13px;
-  height: 36px;
-  @include box-shadow-inset(0, 0px, 1px, 1px, 0, 0.2);
+  height: 28px;
+  //@include box-shadow-inset(0, 0px, 1px, 1px, 0, 0.2);
   @include border-radius(4px);
-  margin: 10px;
-  border: none;
-  font-weight: 600;
+  border: 1px solid  rgba(0,0,0,0.2);
+  font-weight: 500;
   span {
     margin-right: 7px;
   }
 }
 button:focus {
   @include box-shadow-inset(0, 0, 2px, 1px, 255, 1);
-  border: 2px solid $color-border-focus;
-//  box-shadow: 0 0 2px 2px rgba(81, 153, 219, 1);
-  outline: none;
-}
-button:disabled {
-  color: $color-font-disabled;
-  background: $color-background-disabled;
+  // border: 2px solid $color-border-focus;
+  // box-shadow: 0 0 2px 2px $color-border-focus;
+  outline: 2px solid $color-border-focus;
 }
 input:focus {
-  @extend button:focus;
+  box-shadow: 0 0 2px 2px $color-border-focus;
 }
 .btn {
   // Серый градиент ПОКОЙ
   background: $color-btn-background;
   background: linear-gradient(to top, $color-btn-background, #fff);
 }
-.btn:hover {
+.btn:hover:enabled {
   background: linear-gradient(to top, $color-btn-background, $color-btn-hover-up-background);
 }
+.btn:active {
+  border: 1px solid #b2b2b2;
+  @include box-shadow-inset(0, 1px, 2px, 1px, 0, 0.15);
+  background: #d9d9d9;
+}
 button.positive {
+  height: 36px;
   background: $color-positive-background;
   background: linear-gradient(to top, $color-positive-background, $color-positive-up-background);
   color: $color-positive-font;
 }
-button.positive:hover {
+button.positive:hover:enabled {
   background: linear-gradient(to top, $color-positive-hover-background, $color-positive-hover-up-background);
+}
+button[disabled] {
+  color: $color-font-disabled;
+  background: $color-background-disabled;
+  cursor: not-allowed;
 }

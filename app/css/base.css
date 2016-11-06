@@ -1,3 +1,6 @@
+* {
+  outline: 1px solid tomato; }
+
 @font-face {
   font-family: "KonturIcon";
   src: url("../src/fonts/kontur-iconic-eco.eot?#iefix") format("embedded-opentype");
@@ -34,52 +37,154 @@
 
 html {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  width: 100%;
+  height: 100%; }
 
 body {
+  width: 100%;
+  height: 100%;
   font-family: "Segoe UI";
   font-size: 14px;
   line-height: 20px;
   color: #404040; }
 
+section {
+  height: 100%;
+  float: left; }
+
+#control {
+  padding-top: 30px;
+  padding-left: 32px;
+  width: 332px; }
+  #control form {
+    margin-bottom: 50px; }
+    #control form button {
+      margin: 5px; }
+
+.group1 {
+  margin: 55px 0; }
+  .group1 button {
+    display: inline-block; }
+
+.radio-group label {
+  text-align: center;
+  margin: 0 15px 0 5px; }
+
+.group2 p {
+  margin: 0 5px;
+  display: inline-block; }
+
+#result {
+  padding-left: 20px; }
+  #result div {
+    display: block;
+    float: left; }
+
 button {
   padding: 0px 13px;
-  height: 36px;
-  -webkit-box-shadow: inset 0 0px 1px 1px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: inset 0 0px 1px 1px rgba(0, 0, 0, 0.2);
-  box-shadow: inset 0 0px 1px 1px rgba(0, 0, 0, 0.2);
+  height: 28px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
   border-radius: 4px;
-  margin: 10px;
-  border: none;
-  font-weight: 600; }
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  font-weight: 500; }
   button span {
     margin-right: 7px; }
 
-button:focus, input:focus {
+button:focus {
   -webkit-box-shadow: inset 0 0 2px 1px white;
   -moz-box-shadow: inset 0 0 2px 1px white;
   box-shadow: inset 0 0 2px 1px white;
-  border: 2px solid #5199db;
-  outline: none; }
+  outline: 2px solid #5199db; }
 
-button:disabled {
-  color: #808080;
-  background: #f2f2f2; }
+input:focus {
+  box-shadow: 0 0 2px 2px #5199db; }
 
 .btn {
   background: #ebebeb;
   background: linear-gradient(to top, #ebebeb, #fff); }
 
-.btn:hover {
+.btn:hover:enabled {
   background: linear-gradient(to top, #ebebeb, #f2f2f2); }
 
+.btn:active {
+  border: 1px solid #b2b2b2;
+  -webkit-box-shadow: inset 0 1px 2px 1px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: inset 0 1px 2px 1px rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0 1px 2px 1px rgba(0, 0, 0, 0.15);
+  background: #d9d9d9; }
+
 button.positive {
+  height: 36px;
   background: #37910b;
   background: linear-gradient(to top, #37910b, #4ba91d);
   color: white; }
 
-button.positive:hover {
+button.positive:hover:enabled {
   background: linear-gradient(to top, #307e0a, #3b8d13); }
+
+button[disabled] {
+  color: #808080;
+  background: #f2f2f2;
+  cursor: not-allowed; }
+
+table td {
+  padding: 5px; }
+  table td input {
+    width: 36px;
+    height: 38px;
+    border: 1px solid #d9d9d9;
+    padding-left: 5px; }
+
+div.wrap-tab {
+  position: relative;
+  margin: 0 30px 25px 0;
+  padding: 2px 4px;
+  border-left: 2px solid #444;
+  border-right: 2px solid #444;
+  position: relative;
+  display: inline-block; }
+
+div.wrap-tab::after,
+div.wrap-tab::before,
+table::after,
+table::before {
+  position: absolute;
+  display: block;
+  width: 8px;
+  height: 2px;
+  background: #444;
+  content: ""; }
+
+div.wrap-tab::after {
+  top: 0;
+  right: 0; }
+
+div.wrap-tab::before {
+  top: 0;
+  left: 0; }
+
+table::after {
+  bottom: 0;
+  left: 0; }
+
+table::before {
+  bottom: 0;
+  right: 0; }
+
+.error {
+  background: #f6c1c0; }
+
+.input {
+  background: #5199db; }
+
+.default-panel {
+  background: #bcbcbc; }
+
+.ng-dirty.ng-invalid {
+  border-color: tomato; }
+
+.error-text {
+  color: tomato; }

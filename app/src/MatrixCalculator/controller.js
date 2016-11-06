@@ -3,6 +3,8 @@ calcApp.controller('MatrixCalcCtrl', function($scope, CalculatorService){
     var calc = new CalculatorService();
 
     $scope.showErrorMessage = false;
+    $scope.panel = { input: false,
+      default: true };
 
     $scope.matrixC = [["","",""],
                      ["","",""],
@@ -13,8 +15,11 @@ calcApp.controller('MatrixCalcCtrl', function($scope, CalculatorService){
     $scope.matrixB = [[1, 2],
                       [1, 2]];
     $scope.selectMatrix = { value: 'matrixA' };
+
     $scope.changeInput = function() {
-      $scope.showErrorMessage = true;
+        $scope.panel = { input: true,
+        default: false };
+        $scope.showErrorMessage = false;
     };
 
 
@@ -33,8 +38,12 @@ calcApp.controller('MatrixCalcCtrl', function($scope, CalculatorService){
         if(tmp){
             $scope.showErrorMessage = false;
             $scope.matrixC = tmp;
+            $scope.panel = { input: false,
+              default: true }
         }
         else {
+            $scope.panel = { input: false,
+            default: false }
             $scope.showErrorMessage = true;
             console.error('Error! Matrix is not multiplication because count row matrix A not equal coun columns matrix B.')
         }

@@ -1,0 +1,41 @@
+section {
+  height: 100%;
+  float: left;
+}
+#control {
+  padding-top: 30px;
+  padding-left: 32px;
+  width: 332px;
+  form {
+      margin-bottom: 50px;
+      button {
+        margin: 5px;
+      }
+  }
+}
+.group1 {
+  margin: 55px 0;
+  button {
+    display: inline-block;
+  }
+}
+.radio-group {
+  label {
+    text-align: center;
+    margin: 0 15px 0 5px;
+  }
+}
+.group2 {
+  p {
+    margin: 0 5px;
+    display: inline-block;
+  }
+}
+
+#result {
+  padding-left: 20px;
+  div {
+    display: block;
+    float: left;
+  }
+}

@@ -33,9 +33,26 @@ section {
 }
 
 #result {
-  padding-left: 20px;
+  padding: 20px 0 0 20px;
+  width: 73%;
   div {
-    display: block;
+    display: table;
+    float: left;
+    margin: 10px;
+  }
+  p {
+    font-size: 20px;
+    font-weight: 700;
+  }
+  form[name="tableA"] {
     float: left;
   }
+}
+#nameB {
+  text-align: center;
+}
+#nameA {
+  // line-height: 200px;
+  display: table-cell;
+  vertical-align: middle;
 }

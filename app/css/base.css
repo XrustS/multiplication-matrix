@@ -1,6 +1,3 @@
-* {
-  outline: 1px solid tomato; }
-
 @font-face {
   font-family: "KonturIcon";
   src: url("../src/fonts/kontur-iconic-eco.eot?#iefix") format("embedded-opentype");
@@ -42,6 +39,7 @@ html {
   height: 100%; }
 
 body {
+  margin: inherit;
   width: 100%;
   height: 100%;
   font-family: "Segoe UI";
@@ -76,10 +74,24 @@ section {
   display: inline-block; }
 
 #result {
-  padding-left: 20px; }
+  padding: 20px 0 0 20px;
+  width: 73%; }
   #result div {
-    display: block;
+    display: table;
+    float: left;
+    margin: 10px; }
+  #result p {
+    font-size: 20px;
+    font-weight: 700; }
+  #result form[name="tableA"] {
     float: left; }
+
+#nameB {
+  text-align: center; }
+
+#nameA {
+  display: table-cell;
+  vertical-align: middle; }
 
 button {
   padding: 0px 13px;
@@ -100,7 +112,8 @@ button:focus {
   outline: 2px solid #5199db; }
 
 input:focus {
-  box-shadow: 0 0 2px 2px #5199db; }
+  box-shadow: 0 0 2px 2px #5199db;
+  outline: none; }
 
 .btn {
   background: #ebebeb;
@@ -136,11 +149,13 @@ table td {
     width: 36px;
     height: 38px;
     border: 1px solid #d9d9d9;
-    padding-left: 5px; }
+    padding-left: 5px;
+    -webkit-box-shadow: inset 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: inset 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 1px 1px 0 rgba(0, 0, 0, 0.2); }
 
 div.wrap-tab {
   position: relative;
-  margin: 0 30px 25px 0;
   padding: 2px 4px;
   border-left: 2px solid #444;
   border-right: 2px solid #444;
@@ -184,7 +199,10 @@ table::before {
   background: #bcbcbc; }
 
 .ng-dirty.ng-invalid {
-  border-color: tomato; }
+  border-color: red; }
 
 .error-text {
-  color: tomato; }
+  color: red; }
+
+.clear {
+  clear: both; }

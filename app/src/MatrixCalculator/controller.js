@@ -1,6 +1,8 @@
 'use strict';
 calcApp.controller('MatrixCalcCtrl', function($scope, CalculatorService){
-    var calc = new CalculatorService();
+    var calc = new CalculatorService(),
+        defaultMinimumArray = 2,
+        defaultMaximumArray = 10;
 
     $scope.showErrorMessage = false;
     $scope.panel = { input: false,
@@ -8,12 +10,15 @@ calcApp.controller('MatrixCalcCtrl', function($scope, CalculatorService){
 
     $scope.matrixC = [["","",""],
                      ["","",""],
+                     ["","",""],
                      ["","",""]];
     $scope.matrixA = [[3, 2],
+                      [3, 2],
+                      [3, 2],
                       [3, 2]];
 
-    $scope.matrixB = [[1, 2],
-                      [1, 2]];
+    $scope.matrixB = [[1, 2, 3],
+                      [1, 2, 3]];
     $scope.selectMatrix = { value: 'matrixA' };
 
     $scope.changeInput = function() {
@@ -28,6 +33,8 @@ calcApp.controller('MatrixCalcCtrl', function($scope, CalculatorService){
         clearArray($scope.matrixB, 0);
         clearArray($scope.matrixC, "");
         $scope.showErrorMessage = false;
+        $scope.panel = { input: false,
+          default: true };
     };
 
     $scope.multiplicationMatrix = function(a,b) {
@@ -93,7 +100,9 @@ calcApp.controller('MatrixCalcCtrl', function($scope, CalculatorService){
         var arr = [];
         defaultValue = defaultValue || 0;
 
-        matrix[0].forEach(function(){
+        if(matrix.length == defaultMaximumArray)
+          return false;
+        matrix[0].forEach(function() {
             arr.push(defaultValue);
         });
         matrix.push(arr);
@@ -102,19 +111,21 @@ calcApp.controller('MatrixCalcCtrl', function($scope, CalculatorService){
     function addColumn(matrix, defaultValue) {
         defaultValue = defaultValue || 0;
 
-        matrix.forEach(function(row, i){
+        if(matrix[0].length == defaultMaximumArray)
+          return false;
+        matrix.forEach(function(row, i) {
             matrix[i].push(defaultValue);
         });
     };
 
     function removeRow(matrix) {
-        if(matrix.length !== 1)
+        if(matrix.length !== defaultMinimumArray)
             matrix.pop();
     };
 
     function removeColumn(matrix) {
         matrix.forEach(function(row, i){
-            if(row.length !== 1)
+            if(row.length !== defaultMinimumArray)
                 matrix[i].pop();
         });
     };

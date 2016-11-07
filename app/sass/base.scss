@@ -8,13 +8,13 @@ $default-font-size: 14px;
 $default-line-heigth: 20px;
 $font-stack: #{$default-font-size}/#{$default-line-heigth} $font-name, sans-serif;
 $color-error-panel: #f6c1c0;
-$color-error: tomato;
+$color-error: red;
 $color-input-panel: #5199db;
 $color-default-panel: #bcbcbc;
 
 // debuging
 *{
-    outline: 1px solid tomato;
+    // outline: 1px solid tomato;
 }
 
 @import 'kontur-font';
@@ -27,9 +27,8 @@ html {
   height: 100%;
 }
 
-
 body {
-
+  margin: inherit;
   width: 100%;
   height: 100%;
   // font: $font-stack;
@@ -56,4 +55,7 @@ body {
 }
 .error-text {
   color: $color-error;
+}
+.clear {
+  clear: both;
 }
